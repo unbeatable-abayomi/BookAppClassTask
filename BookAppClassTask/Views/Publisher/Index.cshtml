@@ -1,0 +1,54 @@
+﻿@model List<BookAppClassTask.Models.Publisher>
+@{
+    ViewData["Title"] = "Publishers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+  
+     
+    <h2>@ViewData["Title"]</h2>
+    <table class="table table-bordered table-responsive-md text-center mt-5">
+        <thead>
+            <tr>
+                <th>PublisheId</th>
+                <th>PublisheName</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Publisher in Model)
+            {
+            <tr>
+                <td>@Publisher.PublisherId</td>
+                <td>@Publisher.PublisherName</td>
+                <td>@Publisher.Address</td>
+                <td>@Publisher.Phone</td>
+                <td>@Publisher.City</td>
+                <td>@Publisher.State</td>
+                <td>@Publisher.Country</td>
+            </tr>
+                
+            }
+        </tbody>
+        @*<tfoot>
+            <tr>
+                <td>
+                    <button class="btn btn-success text-white">
+                        <a asp-controller="Publisher" asp-action="Create">Add Publisher</a>
+                    </button>
+                </td>
+            </tr>
+              
+        </tfoot>*@
+    </table>
+    <div class="text-center">
+        <button class="btn btn-success text-white">
+            <a asp-controller="Publisher" class="text-white" asp-action="Create">Add Publisher</a>
+        </button>
+    </div>
+

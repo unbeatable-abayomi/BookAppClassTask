@@ -1,0 +1,146 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model BookAppClassTask.Models.AllAuthorsBooksPublishers
+
+    <div class="text-center">
+        <h1 class="display-4"> Welcome To My E-Books Shelves</h1>
+        <h4 class="display-4">A Platform To Expand Your Knowledge</h4>
+        @*<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="~/images/splash.2.jpg" class="img-fluid" />
+                </div>
+                <div class="col-md-4">
+                    <img src="~/images/splash.jpg" class="img-fluid" />
+                </div>
+
+                <div class="col-md-4">
+                    <img src="~/images/splash3.jpg" class="img-fluid" />
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-md-4">
+                    <img src="~/images/splash4.jpg" class="img-fluid" />
+                </div>
+                <div class="col-md-4">
+                    <img src="~/images/splash5.jpg" class="img-fluid" />
+                </div>
+
+                <div class="col-md-4">
+                    <img src="~/images/splash6.jpg" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+     
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h2 class="display-4">Authors</h2>
+                    <table class="table border-1 table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Author Name</th>
+                                <th>Author ID</th>
+                                <th>Sex</th>
+                                <th>City</th>
+                                <th>Address</th>
+                                <th>Phone</th>
+                                <th>State</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var Author in Model.Authors)
+                            {
+                                <tr>
+                                    <td>@Author.AuthorName</td>
+                                    <td>@Author.AuthorId</td>
+                                    <td>@Author.Sex</td>
+                                    <td>@Author.City</td>
+                                    <td>@Author.Address</td>
+                                    <td>@Author.Phone</td>
+                                    <td>@Author.State</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h2 class="display-4">Books</h2>
+                    <table class="table border-1 table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Book Title</th>
+                                <th>Book ID</th>
+                                <th>Price</th>
+                                <th>Author Id</th>
+                                <th>Publisher Id</th>
+                                <th>Date Of Pushilsing</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var Book in Model.Books)
+                            {
+                                <tr>
+                                    <td>@Book.BookTitle</td>
+                                    <td>@Book.BookId</td>
+                                    <td>@Book.Price</td>
+                                    <td>@Book.AuthorId</td>
+                                    <td>@Book.PublisherId</td>
+                                    <td>@Book.DateOfPublishing</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h2 class="display-4">Publishers</h2>
+                    <table class="table border-1 table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Publisher Name</th>
+                                <th>Publisher ID</th>
+                                <th>Address</th>
+                                <th>Phone</th>
+                                <th>City</th>
+                                <th>Country</th>
+                                <th>State</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var Publisher in Model.Publishers)
+                            {
+                                <tr>
+                                    <td>@Publisher.PublisherName</td>
+                                    <td>@Publisher.PublisherId</td>
+                                    <td>@Publisher.Address</td>
+                                    <td>@Publisher.Phone</td>
+                                    <td>@Publisher.City</td>
+                                    <td>@Publisher.Country</td>
+                                    <td>@Publisher.State</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+
+        </div>
+     </div>
+       
+
+
+   

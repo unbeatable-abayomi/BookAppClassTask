@@ -1,0 +1,47 @@
+﻿@model List<BookAppClassTask.Models.Author>
+@{
+    ViewData["Title"] = "Authors";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+
+<div class="table-responsive">
+    <table class="table border-1">
+        <thead>
+            <tr>
+                <th>
+                    Author Id
+                </th>
+                <th>Author Name</th>
+                <th>Sex</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>State</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Author in Model)
+            {
+                <tr>
+                    <td>@Author.AuthorId</td>
+                    <td>@Author.AuthorName</td>
+                    <td>@Author.Sex</td>
+                    <td>@Author.City</td>
+                    <td>@Author.Address</td>
+                    <td>@Author.Phone</td>
+                    <td>@Author.State</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="text-center">
+    <button class="btn btn-primary"><a asp-controller="Author" class="text-white" asp-action="Create"> Add a New Author</a></button>
+</div>
+@Html.Partial("_myPartialView");
+

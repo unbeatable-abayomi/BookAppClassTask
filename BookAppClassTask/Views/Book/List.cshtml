@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "List Of All Books";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<BookAppClassTask.Models.Book>
+<h1>@ViewData["Title"]</h1>
+
+
+
+
+<div class="table-responsive">
+    <table class="table border-1">
+        <thead>
+            <tr>
+                <th>BookId</th>
+                <th>BookTitle</th>
+                <th>Price</th>
+                <th>AuthorId</th>
+                <th>PublisherId</th>
+                <th>DateOfPublishing</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Book in Model)
+            {
+            <tr>
+                <td>@Book.BookId</td>
+                <td>@Book.BookTitle</td>
+                <td>@Book.Price</td>
+                <td>@Book.AuthorId</td>
+                <td>@Book.PublisherId</td>
+                <td>@Book.DateOfPublishing</td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+<div class="text-center">
+    <button class="btn btn-primary"><a asp-controller="Book" class="text-white" asp-action="Create"> Add a New Book</a></button>
+</div>
+@Html.Partial("_myPartialViewBooks");
+
+
+
